@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>The Pact Documnetation</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../image/icons8-demon-60.png" type="image/png">
+  </head>
+  <body>
+    <main class="wrapper">
+        <h1>Overview</h1>
+        <header>Use this website to navigate through the various technical documents for The Pact capstone 
+            project. The project was done as a capstone project by the <a href="team.html">Mason Jars</a> 
+            for the RIT Game Design and Development Master’s program in the 2022-2023 academic year.  
+        </header> 
+        <nav>
+            <h2>Navigation</h2>
+            <p><a href="../index.html">Home page</a></p>
+            <p><a href="team.html">Team page</a></p>
+            <h2>Related</h2>
+            <p><a href="base_projectile.html">Base Projectile</a></p>
+            <p><a href="light_projectile.html">Light Projectile</a></p>
+            <p><a href="heavy_projectile.html">Heavy Projectile</a></p>
+        </nav>
+        <section>
+            <h1>Projectiles</h1>
+            <p>In our game, projectiles are represented by a series of Blueprints with a rigidly defined inheritance structure to pass down specific behaviors. There are two sections to the inheritance structure, the “Logic” section and the “Visual” section, which are separated by a dotted line below. All the behaviors are implemented in the logic layer, and only different VFX styles are used in the visual layer. This separation was made to make more unique projectiles with ability upgrades and more distinguished differences in enemy and player VFX. </p>
+            <img src="../image/projectile_1.PNG">
+            <h3>Logic Layer</h3>
+            <p>On the logic layer, there are just three Blueprints: <a href="base_projectile.html">Base Projectile</a>, <a href="light_projectile.html">Light Projectile</a>, and <a href="heavy_projectile.html">Heavy Projectile</a>. The <a href="base_projectile.html">Base Projectile</a> handles the projectile logic shared by all projectiles and acts as a parent to the light and heavy projectile blueprints. This projectile also defines and calls some special event methods that the children's classes use for unique behaviors and upgrades. All projectiles are passed a 
+                <a href="character_abilities.html">Character Abilities Struct</a> that the projectiles use to determine their behaviors. It also has a VFX Manager attached so that child-defined VFX in the visual layer works without needing to program anything on the visual layer. </p>
+            <h3>Visual Layer</h3>
+            <p>On the visual layer, changes are made to the VFX manager to change how a projectile should look. There will be as many projectiles on this layer as there are visually distinct projectiles. These projectiles will be what is created by an enemy or player and will inherit all logic from the logic layer. When a 
+                <a href="base_character.html">Base Character</a> uses the CreateProjectile method, the correct visual projectile will be chosen to instantiate using its <a href="character_abilities.html">Ability Struct.</a> </p>
+
+        </section>
+    </main>
+  </body>
+</html>

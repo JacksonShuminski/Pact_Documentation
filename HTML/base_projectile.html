@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>The Pact Documnetation</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../image/icons8-demon-60.png" type="image/png">
+  </head>
+  <body>
+    <main class="wrapper">
+        <h1>Overview</h1>
+        <header>Use this website to navigate through the various technical documents for The Pact capstone 
+            project. The project was done as a capstone project by the <a href="team.html">Mason Jars</a> 
+            for the RIT Game Design and Development Master’s program in the 2022-2023 academic year.  
+        </header> 
+        <nav>
+            <h2>Navigation</h2>
+            <p><a href="../index.html">Home page</a></p>
+            <p><a href="team.html">Team page</a></p>
+            <h2>Related</h2>
+            <p><a href="projectiles.html">Projectiles</a></p>
+            <p><a href="light_projectile.html">Light Projectile</a></p>
+            <p><a href="heavy_projectile.html">Heavy Projectile</a></p>
+        </nav>
+        <section>
+            <h1>Base Projectile</h1>
+            <p>This blueprint acts as the parent to all the <a href="projectiles.html">Projectiles</a> and operates on the logic layer. Base projectile takes an <a href="character_abilities.html">Abilities Struct</a> that it uses in its children to determine if this shot has any special behaviors it should apply. On a high level, this blueprint handles launching, striking, damaging hit characters, and VFX for anticipation, action, and impact. It also defines and calls an OnHit method where the hit character is passed inside, as well as an OnCreate method. </p>
+            <h3>Start</h3>
+            <p>On creating the projectile, the OnCreate method is called so that the immediate children can deploy some logic of their own when a projectile is first created. It also triggers the anticipation and action VFX from the VFX manager. After this, it will set the object to be destroyed after a delay. </p>
+            <p>Unreal Engine is very finicky when it comes to launching a projectile immediately after creating it and can sometimes apply no impulse. To combat this, the start method will launch the projectile and wait for a frame to see if it has actually been launched. </p>
+            
+            <h3>On Overlap</h3>
+            <p>When the projectile overlaps something else, it will check for a viable hit on another <a href="base_character.html">Base Character</a> before destroying itself. To check for a viable hit, it checks the tag of the other object to see if it is a “Player” or “Enemy” and then ensures that the projectile belongs to the opposite side by checking the IsPlayerShot boolean. If it belongs to the same side as the character, it does not destroy itself. </p>
+            <p>When a viable hit occurs, the OnHit method is called and passed the <a href="base_character.html">Base Character</a> object of what the projectile hit. It then applies the damage to the other character. After this, the VFX manager is used to deploy the impact VFX. </p>
+
+        </section>
+    </main>
+  </body>
+</html>

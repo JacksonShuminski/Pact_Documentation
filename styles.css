@@ -1,0 +1,92 @@
+/**************************************
+STATIC LAYOUT CSS
+**************************************/
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header {
+	width: 960px;
+}
+
+nav, section {
+  float: left;
+}
+
+nav {
+  width: 200px;
+  margin-right: 10px;
+}
+
+section {
+  width: 750px;
+}
+
+
+
+/**************************************
+CSS TO MAKE THE EXAMPLE LOOK PRETTY
+**************************************/
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #2980b9;
+  color: #FFF;
+  font-family: Helvetica;
+  text-align: center;
+  margin: 0;
+  font-size: larger;
+}
+
+header,
+nav,
+section {
+  border: 1px solid rgba(255,255,255,0.8);
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+header {
+  padding: 20px 20px;
+}
+
+nav, section {
+  padding: 50px 20px;
+}
+/* a:visited a:hover a:active  */
+a:link {
+    color:#AAA;
+    font-weight: bold;
+}
+
+a:visited {
+    color:#AAA;
+    font-weight: bold;
+}
+
+a:hover {
+    color:#EEE;
+    font-weight: bold;
+}
+
+img {
+    width: 100%;
+}
+
+h2 {
+    text-shadow: black -2px 2px;
+}
+h1 {
+    text-shadow: black -2px 2px;
+}
+
+h3 {
+    text-shadow: black -1px 1px;
+}
