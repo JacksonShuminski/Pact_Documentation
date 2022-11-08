@@ -17,9 +17,23 @@
             <h2>Navigation</h2>
             <p><a href="../index.html">Home page</a></p>
             <p><a href="team.html">Team page</a></p>
+            <h2>Related</h2>
+            <p><a href="light_upgrades.html">Light Upgrades</a></p>
+            <p><a href="heavy_upgrades.html">Heavy Upgrades</a></p>
+            <p><a href="dash_upgrades.html">Dash Upgrades</a></p>
         </nav>
         <section>
             <h1>Character Abilities</h1>
+            <p>Character Abilities are defined by a Structure. This structure is used in the <a href="base_character.html">Base Character</a> for creating <a href="projectiles.html">Projectiles</a>. It is used in <a href="projectiles.html">Projectiles</a> for describing projectile upgrades. It is used by the <a href="enemy_bp.html">Enemy BP</a> to determine the available abilities (light attack, heavy attack, dash) and relevant statistics (range, damage, ect.) of an enemy. </p>
+            <p>The Abilities Structure is made up of booleans to determine if an enemy can light attack, heavy attack, or dodge on the top layer. It also has a Light Abilities structure, Heavy Abilities structure, and Dash Abilities structure. </p>
+
+            <h3>Light Abilities</h3>
+            <p>The damage, fire rate, range, shot speed, and <a href="light_upgrades.html">Light Upgrades structure</a> are all stored in the Light Abilities structure. These statistics are used in the Create Projectile method in <a href="base_character.html">Base Character</a>, and they are used in <a href="base_projectile.html">Base Projectile</a> for dealing damage to other characters. The <a href="enemy_bp.html">Enemy AI</a> and <a href="player_bp.html">Player BP</a> also use some statistics from here life fire rate. </p>
+            <h3>Heavy Abilities</h3>
+            <p>The damage, fire rate, range, shot speed, and <a href="heavy_upgrades.html">Heavy Upgrades structure</a> are all stored in the Heavy Abilities structure. These statistics are used in the Create Projectile method in <a href="base_character.html">Base Character</a>, and they are used in <a href="base_projectile.html">Base Projectile</a> for dealing damage to other characters. The <a href="enemy_bp.html">Enemy AI</a> and <a href="player_bp.html">Player BP</a> also use some statistics from here life fire rate. </p>
+            <h3>Dash Abilities</h3>
+            <p>The Dash Strength and cooldown are both stored here, as well as the <a href="dash_upgrades.html">Dash Upgrades structure</a>. The cooldown and strength are used for the player and enemy when they dash. </p>
+            
         </section>
     </main>
   </body>

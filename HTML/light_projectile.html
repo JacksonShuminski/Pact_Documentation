@@ -24,6 +24,15 @@
         </nav>
         <section>
             <h1>Light Projectile</h1>
+            <p>The light projectile is a <a href="projectiles.html">Projectile</a> that inherits behaviors from <a href="base_projectile.html">Base Projectile</a>. It uses an <a href="character_abilities.html">Abilities Struct</a> to determine if it has upgrades relevant to light attacks before acting out any of the upgrade behaviors. The OnHit event has logic in place to heal the player if the shot was fired by the player. </p>
+            
+            <img src="../image/projectile_2.PNG" id="proj_2">
+
+            <h3>Burst Upgrade</h3>
+            <p>The burst upgrade will alter the behavior of the projectile itself by adding a curve to the lines in a radial pattern. Each projectile will have a point stored in it to determine the direction it will initially travel before curving back toward the target. Most of the burst upgrade logic occurs in the <a href="player_bp.html">Player Blueprint</a> by changing the attack to charge up while holding the mouse down and fire when releasing. </p>
+
+            <h3>Frost Upgrade</h3>
+            <p>The frost upgrade slows down the player and enemy as stacks build up. The implementation of the “Slow” effect is implemented in <a href="player_bp.html">Player Blueprint</a> and <a href="enemy_bp.html">Enemy Blueprint</a> in two separate ways. Both use the <a href="base_character.html">Base Character</a> frost stacks and frost resistance in their implementations of Slow. The projectile uses the AddFrost method on the character in the OnHit method by the amount defined in the <a href="character_abilities.html">Ability Struct</a>. </p>
         </section>
     </main>
   </body>

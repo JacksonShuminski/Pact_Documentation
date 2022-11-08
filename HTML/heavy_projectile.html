@@ -24,6 +24,12 @@
         </nav>
         <section>
             <h1>Heavy Projectile</h1>
+            <p>The light projectile is a <a href="projectiles.html">Projectile</a> that inherits behaviors from <a href="base_projectile.html">Base Projectile</a>. It uses an <a href="character_abilities.html">Abilities Struct</a> to determine if it has upgrades relevant to heavy attacks before acting out any of the upgrade behaviors. The OnCreation event has logic in place to damage the player if the shot was fired by the player. </p>
+
+            <img src="../image/projectile_2.PNG" id="proj_2">
+
+            <h3>Vulnerable Debuff Upgrade</h3>
+            <p>The vulnerable upgrade increases damage to the player and enemy as stacks build up. The implementation of the Vulnerable effect is done in <a href="base_character.html">Base Character</a>, specifically in the DamageCharacter event. The projectile uses the AddVulnerable method on the <a href="base_character.html">Base Character</a> in the OnHit method by the amount defined in the <a href="character_abilities.html">Ability Struct</a>. </p>
         </section>
     </main>
   </body>
