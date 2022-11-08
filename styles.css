@@ -38,11 +38,16 @@ CSS TO MAKE THE EXAMPLE LOOK PRETTY
 
 body {
   background: #2980b9;
-  color: #FFF;
+  color: rgb(233, 233, 233);
   font-family: Helvetica;
   text-align: center;
   margin: 0;
   font-size: larger;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 header,
@@ -62,17 +67,17 @@ nav, section {
 }
 /* a:visited a:hover a:active  */
 a:link {
-    color:#AAA;
+    color:#FFF;
     font-weight: bold;
 }
 
 a:visited {
-    color:#AAA;
+    color:#FFF;
     font-weight: bold;
 }
 
 a:hover {
-    color:#EEE;
+    color:rgb(167, 167, 167);
     font-weight: bold;
 }
 
